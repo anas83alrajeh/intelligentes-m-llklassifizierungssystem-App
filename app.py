@@ -46,4 +46,4 @@ if uploaded_file:
 
 # Info am Ende der Seite
 st.markdown("---")
-st.markdown("Erstellt von **Anas Al Rajeh**  \nKontakt: anasalrajeh9@gmail.com")
+st.markdown("Erstellt von Anas Al Rajeh  \nKontakt: anasalrajeh9@gmail.com")
