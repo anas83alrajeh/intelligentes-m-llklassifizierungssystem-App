@@ -12,6 +12,7 @@ from PIL import Image
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 class_names = ['cardboard', 'glass', 'metal', 'paper', 'plastic', 'trash']
+class_names_de = ['Karton', 'Glas', 'Metall', 'Papier', 'Kunststoff', 'Müll']
 
 # Modell laden
 model = models.resnet18(pretrained=False)
@@ -41,3 +42,8 @@ if uploaded_file:
         output = model(input_tensor)
         pred = torch.argmax(output, 1)
         st.success(f"🗑️ Erwartete Klasse: **{class_names[pred]}**")
+        st.write(f"Deutsch: **{class_names_de[pred]}**")
+
+# Info am Ende der Seite
+st.markdown("---")
+st.markdown("Erstellt von **Anas Al Rajeh**  \nKontakt: anasalrajeh9@gmail.com")
